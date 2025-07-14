@@ -10,9 +10,7 @@ class TextHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
-    double baseFontSize = screenWidth > 600 ? 18.0 : 13.1;
-    print(screenWidth);
-    print(screenHeight);
+    double baseFontSize = screenWidth > 600 ? 18.0 : 15;
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [

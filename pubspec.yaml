@@ -67,6 +67,8 @@ flutter:
   assets:
     - assets/images/coin.jpeg
     - assets/images/content.png
+    - assets/images/ml.png
+    - assets/images/pubg.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

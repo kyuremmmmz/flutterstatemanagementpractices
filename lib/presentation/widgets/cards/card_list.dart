@@ -32,7 +32,8 @@ class CardList extends StatelessWidget {
         child: Container(
           padding: const EdgeInsets.only(
             top: 9,
-            right: 86,
+            right: 35,
+            bottom: 5
           ),
           child: Row(
             children: [
