@@ -1,5 +1,6 @@
 import 'package:figmatoflutter/presentation/providers/crudproviders/crud_providers.dart';
 import 'package:figmatoflutter/presentation/screens/main/home_screen.dart';
+import 'package:figmatoflutter/presentation/screens/screen_handler.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'injection.dart' as dependency_injection;
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      home: ScreenHandler(),
       ),
       );
   }

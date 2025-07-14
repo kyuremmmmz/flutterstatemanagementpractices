@@ -1,17 +1,12 @@
-import 'package:figmatoflutter/domain/entity/card_list_entity.dart';
-import 'package:figmatoflutter/domain/entity/merchants_badge_entity.dart';
-import 'package:figmatoflutter/domain/entity/offers_container_entity.dart';
 import 'package:figmatoflutter/presentation/widgets/badges/avatar_badge.dart';
 import 'package:figmatoflutter/presentation/widgets/badges/merchants_badges.dart';
 import 'package:figmatoflutter/presentation/widgets/cards/card_list.dart';
 import 'package:figmatoflutter/presentation/widgets/containers/balance_container.dart';
 import 'package:figmatoflutter/presentation/widgets/containers/offers_container.dart';
 import 'package:figmatoflutter/presentation/widgets/grid_views/grid_view.dart';
-import 'package:figmatoflutter/presentation/widgets/headers/header_1.dart';
 import 'package:figmatoflutter/presentation/widgets/map/map.dart';
 import 'package:figmatoflutter/presentation/widgets/row/row_view.dart';
 import 'package:figmatoflutter/presentation/widgets/texts/text_header.dart';
-import 'package:figmatoflutter/utils/app_images.dart';
 import 'package:figmatoflutter/utils/app_padding.dart';
 import 'package:figmatoflutter/utils/mock_data.dart';
 import 'package:flutter/material.dart';
@@ -92,6 +87,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   height: 300,
                   child: Mapa(),
                 ),
+                
                 OffersSection(
                   header: 'Games 🎮 ',
                   onViewAllClick: (){},
@@ -110,9 +106,15 @@ class _HomeScreenState extends State<HomeScreen> {
                       );
                     }),
                 ),
+                const SizedBox(
+                  height: 36.5,
+                ),
                 OffersSection(
                   header: 'Popular Merchants',
                   onViewAllClick: (){},
+                ),
+                const SizedBox(
+                  height: 20.5,
                 ),
                 SizedBox(
                   height: 100,
@@ -127,7 +129,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         const SizedBox(width: 25)
                       ],
                     ))
-                )
+                ),
+                const SizedBox(
+                  height: 45.5,
+                ),
               ],
             ),
           ),
