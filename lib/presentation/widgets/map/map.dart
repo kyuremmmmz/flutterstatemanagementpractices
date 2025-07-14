@@ -6,11 +6,13 @@ class Mapa extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    print(width);
     return Container(
       padding: EdgeInsets.only(
         top: 32
       ),
-      width: 345,
+      width: width,
       
       decoration: BoxDecoration(
         borderRadius: BorderRadius.all(

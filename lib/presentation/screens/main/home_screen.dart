@@ -21,22 +21,24 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   final listOfBadges = MockData.listOfBadges;
   final list = MockData.list;
-  final listOfContainers = MockData.listOfContainers;
-
+  final listOfContainers = MockData.listOfContainers; 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-        titleSpacing: 0,
-        leadingWidth: 12,
         centerTitle: true,
+        actions: [
+            BalanceContainer(),
+            const SizedBox(width: 10,),
+        ],
         title:const Row(
           children: [
             AvatarBadge(),
             SizedBox(width: 12),
             TextHeader(text: 'Welcome Back', name: 'Christian'),
-            SizedBox(width: 20),
-            BalanceContainer(),
+            
+            
           ],
         ),
       ),
@@ -84,7 +86,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     }),
                 ),
                 const SizedBox(
-                  height: 300,
+                  height: 400,
                   child: Mapa(),
                 ),
                 
