@@ -69,6 +69,12 @@ flutter:
     - assets/images/content.png
     - assets/images/ml.png
     - assets/images/pubg.png
+    - assets/images/map.png
+    - assets/images/mcdo.png
+    - assets/images/lego.png
+    - assets/images/nike.png
+    - assets/images/uniqlo.png
+    - assets/images/dominos.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

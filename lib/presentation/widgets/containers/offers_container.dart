@@ -12,8 +12,13 @@ class OffersContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.all(
+          Radius.circular(10)
+        )
+      ),
       width: 166,
-      color: Colors.white,
       padding: EdgeInsets.symmetric(
         horizontal: 4,
         vertical: 4
@@ -21,9 +26,18 @@ class OffersContainer extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Image.asset(image,
+          Container(
+            clipBehavior: Clip.hardEdge,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(
+                Radius.circular(10)
+              )
+            ),
+            child: Image.asset(image,
+            fit: BoxFit.cover,
             height: 158,
             width: 158,
+          ),
           ),
           Padding(
             padding: EdgeInsets.only(

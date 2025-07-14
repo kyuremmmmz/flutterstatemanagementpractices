@@ -4,10 +4,10 @@ import 'package:google_fonts/google_fonts.dart';
 
 class OffersSection extends StatelessWidget {
   final VoidCallback onViewAllClick;
-
+  final String header;
   const OffersSection({
     super.key,
-    required this.onViewAllClick,
+    required this.onViewAllClick, required this.header,
   });
 
   @override
@@ -19,7 +19,7 @@ class OffersSection extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
-            'Offers ⚡',
+            header,
             style: GoogleFonts.plusJakartaSans(
               fontWeight: FontWeight.w700,
               fontSize: 20,

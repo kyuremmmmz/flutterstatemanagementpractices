@@ -5,6 +5,8 @@ import 'package:figmatoflutter/presentation/widgets/cards/card_list.dart';
 import 'package:figmatoflutter/presentation/widgets/containers/balance_container.dart';
 import 'package:figmatoflutter/presentation/widgets/containers/offers_container.dart';
 import 'package:figmatoflutter/presentation/widgets/grid_views/grid_view.dart';
+import 'package:figmatoflutter/presentation/widgets/headers/header_1.dart';
+import 'package:figmatoflutter/presentation/widgets/map/map.dart';
 import 'package:figmatoflutter/presentation/widgets/row/row_view.dart';
 import 'package:figmatoflutter/presentation/widgets/texts/text_header.dart';
 import 'package:figmatoflutter/utils/app_padding.dart';
@@ -23,7 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
         bgColor: Colors.black87,
         headingText: 'GET 30% OFF',
         subtext: 'Get special discount \nfor dine in only',
-        headingColorText: Color.fromRGBO(233, 122, 98, 1),
+        headingColorText: const Color.fromRGBO(233, 122, 98, 1),
         subColorText: Color.fromRGBO(255, 255, 255, 1)),
     CardListEntity(
         bgColor: const Color.fromARGB(221, 83, 83, 83),
@@ -70,12 +72,12 @@ class _HomeScreenState extends State<HomeScreen> {
         titleSpacing: 0,
         leadingWidth: 12,
         centerTitle: true,
-        title: Row(
+        title:const Row(
           children: [
             AvatarBadge(),
-            const SizedBox(width: 12),
+            SizedBox(width: 12),
             TextHeader(text: 'Welcome Back', name: 'Christian'),
-            const SizedBox(width: 20),
+            SizedBox(width: 20),
             BalanceContainer(),
           ],
         ),
@@ -101,15 +103,16 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 240,
                   child: FeatureGrid(),
                 ),
                 OffersSection(
+                  header: 'Offers ⚡',
                   onViewAllClick: (){},
                 ),
                 SizedBox(
-                  height: 300,
+                  height: 280,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     itemCount: listOfContainers.length,
@@ -121,7 +124,33 @@ class _HomeScreenState extends State<HomeScreen> {
                         subtext: listOfContainers[index].subtext,
                       );
                     }),
-                )
+                ),
+                const SizedBox(
+                  height: 300,
+                  child: Mapa(),
+                ),
+                OffersSection(
+                  header: 'Games 🎮 ',
+                  onViewAllClick: (){},
+                ),
+                SizedBox(
+                  height: 280,
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: listOfContainers.length,
+                    itemBuilder: (context, index){
+                      return OffersContainer(
+                        image: listOfContainers[index].image,
+                        price: listOfContainers[index].price,
+                        text: listOfContainers[index].text,
+                        subtext: listOfContainers[index].subtext,
+                      );
+                    }),
+                ),
+                OffersSection(
+                  header: 'Popular Merchants',
+                  onViewAllClick: (){},
+                ),
               ],
             ),
           ),
