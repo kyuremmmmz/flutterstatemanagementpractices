@@ -1,6 +1,8 @@
 import 'package:figmatoflutter/domain/entity/card_list_entity.dart';
+import 'package:figmatoflutter/domain/entity/merchants_badge_entity.dart';
 import 'package:figmatoflutter/domain/entity/offers_container_entity.dart';
 import 'package:figmatoflutter/presentation/widgets/badges/avatar_badge.dart';
+import 'package:figmatoflutter/presentation/widgets/badges/merchants_badges.dart';
 import 'package:figmatoflutter/presentation/widgets/cards/card_list.dart';
 import 'package:figmatoflutter/presentation/widgets/containers/balance_container.dart';
 import 'package:figmatoflutter/presentation/widgets/containers/offers_container.dart';
@@ -9,7 +11,9 @@ import 'package:figmatoflutter/presentation/widgets/headers/header_1.dart';
 import 'package:figmatoflutter/presentation/widgets/map/map.dart';
 import 'package:figmatoflutter/presentation/widgets/row/row_view.dart';
 import 'package:figmatoflutter/presentation/widgets/texts/text_header.dart';
+import 'package:figmatoflutter/utils/app_images.dart';
 import 'package:figmatoflutter/utils/app_padding.dart';
+import 'package:figmatoflutter/utils/mock_data.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -20,50 +24,9 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final List<CardListEntity> list = [
-    CardListEntity(
-        bgColor: Colors.black87,
-        headingText: 'GET 30% OFF',
-        subtext: 'Get special discount \nfor dine in only',
-        headingColorText: const Color.fromRGBO(233, 122, 98, 1),
-        subColorText: Color.fromRGBO(255, 255, 255, 1)),
-    CardListEntity(
-        bgColor: const Color.fromARGB(221, 83, 83, 83),
-        headingText: 'GET 30% OFF',
-        subtext: 'Get special discount \nfor dine in only',
-        headingColorText: Color.fromRGBO(233, 122, 98, 1),
-        subColorText: Color.fromRGBO(255, 255, 255, 1)),
-    CardListEntity(
-        bgColor: const Color.fromARGB(221, 131, 88, 88),
-        headingText: 'GET 30% OFF',
-        subtext: 'Get special discount \nfor dine in only',
-        headingColorText: Color.fromRGBO(233, 122, 98, 1),
-        subColorText: Color.fromRGBO(255, 255, 255, 1)),
-    CardListEntity(
-        bgColor: const Color.fromARGB(221, 70, 63, 63),
-        headingText: 'GET 30% OFF',
-        subtext: 'Get special discount \nfor dine in only',
-        headingColorText: Color.fromRGBO(233, 122, 98, 1),
-        subColorText: Color.fromRGBO(255, 255, 255, 1)),
-  ];
-
-  final List<OffersContainerEntity> listOfContainers = [
-    OffersContainerEntity(
-    'assets/images/ml.png', 
-    'Mobile Legends', 
-    'Play the 5v5 MOBA tapos the rest wala na.', 
-    16314.33),
-    OffersContainerEntity(
-    'assets/images/pubg.png', 
-    'PUBG Mobile', 
-    'Play PUBG MOBILE is the rest wala na.', 
-    16314.33),
-    OffersContainerEntity(
-    'assets/images/pubg.png', 
-    'PUBG Mobile', 
-    'Play PUBG MOBILE is the rest wala na.', 
-    16314.33)
-  ];
+  final listOfBadges = MockData.listOfBadges;
+  final list = MockData.list;
+  final listOfContainers = MockData.listOfContainers;
 
   @override
   Widget build(BuildContext context) {
@@ -151,6 +114,20 @@ class _HomeScreenState extends State<HomeScreen> {
                   header: 'Popular Merchants',
                   onViewAllClick: (){},
                 ),
+                SizedBox(
+                  height: 100,
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: listOfBadges.length,
+                    itemBuilder: (context, index)=>Row(
+                      children: [
+                        MerchantsBadges(
+                        image: listOfBadges[index].image, 
+                        text: listOfBadges[index].text),
+                        const SizedBox(width: 25)
+                      ],
+                    ))
+                )
               ],
             ),
           ),
